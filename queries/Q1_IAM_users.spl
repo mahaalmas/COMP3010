@@ -1,0 +1,6 @@
+index=botsv3 sourcetype="aws:cloudtrail"
+| spath userIdentity.userName
+| search userIdentity.userName!=""
+| dedup userIdentity.userName
+| sort userIdentity.userName
+| table userIdentity.userName
