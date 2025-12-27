@@ -1,0 +1,3 @@
+index=botsv3 sourcetype=hardware
+| table host, _raw
+| head 20
