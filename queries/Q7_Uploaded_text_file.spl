@@ -1,0 +1,5 @@
+index=botsv3 sourcetype="aws:s3:accesslogs"
+"REST.PUT.OBJECT" " 200 "
+| rex field=_raw "(?<filename>[A-Za-z0-9._-]+\.txt)"
+| dedup filename
+| table filename

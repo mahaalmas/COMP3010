@@ -1,0 +1,6 @@
+index=botsv3 sourcetype=WinHostMon source="operatingsystem"
+| spath
+| stats values(OS) as OS by host
+| stats count by OS host
+| where count=1
+| table host, OS
